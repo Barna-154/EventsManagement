@@ -1,0 +1,40 @@
+{%  extends 'base.html' %}
+
+{% block content %}
+
+	<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Delagate:</h5>
+			<hr>
+			<a class="btn btn-outline-info  btn-sm btn-block" href="{% url 'update1' pk=delagate_nonpaying.id %}">Edit Delagate</a>
+			<a class="btn btn-outline-danger  btn-sm btn-block" href="{% url 'delete1' pk=delagate_nonpaying.id %}">Delete Delagate</a>
+
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Delagate Information</h5>
+			<hr>
+            <p>Name: {{delagate_nonpaying.Name}}</p>
+			<p>Surname: {{delagate_nonpaying.Surname}}</p>
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Contact Information</h5>
+			<hr>
+			<p>Organisation: {{delagate_nonpaying.Organisation}}</p>
+            <p>Email: {{delagate_nonpaying.Email}}</p>
+		</div>
+	</div>
+</div>
+
+
+
+
+{% endblock %}

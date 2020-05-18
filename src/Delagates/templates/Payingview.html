@@ -1,0 +1,66 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<!-- table to present the information of delagates in the database -->
+<div class ="jumbotron">
+   <div class="row">
+      <div class="col-md">
+         
+         <h3 class= "title">{{title}}</h3>
+
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="card card-body">
+
+                    <form method="get">
+                    {{ myFilter.form }}
+
+                    <button class="btn btn-primary" type="submit">Search</button>
+                    </form>
+                </div>
+                </div>
+            </div>
+            </br>
+
+         <hr>
+         <div class="card card-body">
+            {% if request.user.is_staff %}
+			<a class="btn btn-primary  btn-sm btn-block" href="{% url 'export_1' %}">Export to Excel</a>
+            {% endif %}
+            <table class="table table-sm">
+               <tr>
+                  <th>#</th>
+                  <th>NAME</th>
+                  <th>SURNAME</th>
+                  <th>ORGANISATION</th>
+                  <th>EMAIL</th>
+                  <th>INVOICENUM</th>
+                  <th>RECEIPTNUM</th>
+                  <th>AMOUNT</th>
+                  <th>OPTION</th>
+                  <th>PaymentDate</th>
+                  <th>VIEW</th>
+               </tr>
+               {% for instance in queryset %}
+               <tr>
+                  <td>{{instance.counter}}</td>
+                  <td>{{instance.Name}}</td>
+                  <td>{{instance.Surname}}</td>
+                  <td>{{instance.Organisation}}</td>
+                  <td>{{instance.Email}}</td>
+                  <td>{{instance.InvoiceNum}}</td>
+                  <td>{{instance.ReceiptNum}}</td>
+                  <td>{{instance.Amount}}</td>
+                  <td>{{instance.Options}}</td>
+                  <td>{{instance.Payment_Date}}</td>
+                  <td><a class="btn btn-sm btn-info" href="{% url 'Delagate2' pk=instance.pk %}">VIEW</a></td>
+               </tr>
+               {% endfor %}
+            </table>
+         </div>
+      </div>
+	</div>
+
+</div>
+{% endblock %}

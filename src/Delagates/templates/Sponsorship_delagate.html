@@ -1,0 +1,64 @@
+{%  extends 'base.html' %}
+
+{% block content %}
+
+	<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Delagate:</h5>
+			<hr>
+			<a class="btn btn-outline-info  btn-sm btn-block" href="{% url 'update3' pk=delagate_sponsorship.id %}">Edit Delagate</a>
+			<a class="btn btn-outline-danger  btn-sm btn-block" href="{% url 'delete3' pk=delagate_sponsorship.id %}">Delete Delagate</a>
+
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Delagate Information</h5>
+			<hr>
+            <p>Name: {{delagate_sponsorship.Name}}</p>
+			<p>Surname: {{delagate_sponsorship.Surname}}</p>
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Contact Information</h5>
+			<hr>
+			<p>Organisation: {{delagate_sponsorship.Organisation}}</p>
+            <p>Email: {{delagate_sponsorship.Email}}</p>
+		</div>
+	</div>
+</div>
+
+
+<br>
+
+<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>InvoiceNum</th>
+					<th>ReceiptNUM</th>
+					<th>Payment Date</th>
+					<th>Amount</th>
+				</tr>
+                <tr>
+                  <td>{{delagate_sponsorship.InvoiceNum}}</td>
+                  <td>{{delagate_sponsorship.ReceiptNum}}</td>
+                  <td>{{delagate_sponsorship.Payment_Date}}</td>
+                  <td>{{delagate_sponsorship.Amount}}</td>
+                </tr>
+
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

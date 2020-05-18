@@ -1,0 +1,64 @@
+{%  extends 'base.html' %}
+
+{% block content %}
+
+	<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Delagate:</h5>
+			<hr>
+			<a class="btn btn-outline-info  btn-sm btn-block" href="{% url 'update2' pk=delagate_paying.id %}">Edit Delagate</a>
+			<a class="btn btn-outline-danger  btn-sm btn-block" href="{% url 'delete2' pk=delagate_paying.id %}">Delete Delagate</a>
+
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Delagate Information</h5>
+			<hr>
+            <p>Name: {{delagate_paying.Name}}</p>
+			<p>Surname: {{delagate_paying.Surname}}</p>
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Contact Information</h5>
+			<hr>
+			<p>Organisation: {{delagate_paying.Organisation}}</p>
+            <p>Email: {{delagate_paying.Email}}</p>
+		</div>
+	</div>
+</div>
+
+
+<br>
+
+<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>InvoiceNum</th>
+					<th>ReceiptNUM</th>
+					<th>Payment Date</th>
+					<th>Amount</th>
+				</tr>
+                <tr>
+                  <td>{{delagate_paying.InvoiceNum}}</td>
+                  <td>{{delagate_paying.ReceiptNum}}</td>
+                  <td>{{delagate_paying.Payment_Date}}</td>
+                  <td>{{delagate_paying.Amount}}</td>
+                </tr>
+
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

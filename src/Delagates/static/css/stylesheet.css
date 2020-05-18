@@ -1,0 +1,40 @@
+body {
+    background-color: #5a5a5a;
+}
+
+#total-nonpayee {
+    background-color: #5a5a5a;
+}
+
+#total-payee {
+    background-color: #5a5a5a;
+}
+
+#total-sponsors {
+    background-color: #5a5a5a;
+}
+
+#total-exibitors {
+    background-color: #5a5a5a;
+}
+
+.title {
+    text-align: center;
+}
+
+table {
+    width: 95%;
+    margin: auto;
+    text-align: center;
+    box-shadow: gray;
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+table tr:nth-child(odd) {
+    background: rgb(255, 255, 255);
+}
+
+table tr:nth-child(even) {
+    background: rgb(238, 234, 232);
+}
